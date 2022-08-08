@@ -5,14 +5,19 @@ require "pry"
 class Scraper
 
     def initialize
-        html = URI.open("https://www.airbnb.ca/s/Italy/homes?tab_id=home_tab&flexible_trip_lengths%5B%5D=one_week&search_type=unknown&refinement_paths%5B%5D=%2Fhomes&place_id=ChIJA9KNRIL-1BIRb15jJFz1LOI&date_picker_type=calendar&checkin=2023-02-01&checkout=2023-02-05&adults=2") #list of all airbnbs for 2 guests in Italy from 1 to 5 February 2023
-        content = html.read
+        html = URI.open("http://www.cigargeeks.com/reviews/default.asp?action=showsearch") #or ("http://www.cigargeeks.com/reviews/default.asp")#list of all reviews of different cigar brands
         parsed_content = Nokogiri::HTML(content)
-        # parsed_content.css("a").css(".content-details") this give me an empty array
-        # however if i capitalise .CSS it gives me results:
-        parsed_content.css("div.dir.dir-ltr").css("div.c4mnd7m.dir.dir-ltr")
+        parsed_content.css('td .messagecellbody').css('img')[6].values    #the array number and the format (values) can change
+        # parsed_content.css('.bbstable td').css('img')[6]             # same as above
+        # parsed_content.css('td .messagecellbody').css('img')         # this gives the star ratings - but in 'values' not 'text'
+        # parsed_content.css('.bbstable td')[6]                      # working from 1 to 6 shows the Cigar rating given by individual cigar geek members against a specific cigar.
+        # parsed_content.css('.messagecellbody').css('td')[2].text   # gives same results as above
+        # parsed_content.css('td .messagecellbody')[2].text          # and this
+        binding.pry
+        
 
-binding.pry
+        
+
 
     end
 end
