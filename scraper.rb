@@ -2,9 +2,9 @@ require "nokogiri"
 require "open-uri"
 require "pry"
 
-class Scraper
+class Scraper # the scraper class will scrape the data from the website and then parse all the brand names (and their details?) into another class: brand_names folder (and maybe send the names to a separate cigar_info_class?
 
-    def initialize  #or change fro initialize to: def brand_from_url - however may need an argument of page number
+    def initialize  #or change from initialize to: def brand_from_url as this class will only focus on scraping and sending the data/not using the data? [see phase 1 lesson "collaborating objects lab"] - however may need an argument of page number
         html = URI.open("http://www.cigargeeks.com/cigardb/default.asp?") #search 'brands' of cigars instead of reviews
         parsed_content = Nokogiri::HTML(content)
         cigar_brands = parsed_content.css('.bbstable .messagecellbody') 
@@ -19,8 +19,14 @@ class Scraper
     end
 end
 
+# For Brands pages:
+# brand_name = parsed_content.css('a').text
+# brand_details = parsed_content.css('.bbstable tr') - with each specific heading e.g length[1], color[6] etc, bring .css('td')[#] e.g. [7] = strength
+# link = html + parsed_content.css('a .href')
 
-# For Review pages:
+
+
+# For Reviews pages:
 # ("http://www.cigargeeks.com/reviews/default.asp?action=showsearch") #or ("http://www.cigargeeks.com/reviews/default.asp")#list of all reviews of different cigar brands
         # parsed_content.css('td .messagecellbody').css('img')[6].values    #the array number and the format (values) can change
         # parsed_content.css('.bbstable td').css('img')[6]             # same as above

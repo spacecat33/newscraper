@@ -1,0 +1,41 @@
+# require "nokogiri"
+# require "open-uri"
+# require "pry"
+
+# see phase 1 lesson, collaborating objects lab
+
+class Brand_names  #brand_names relies on the scraper file to do its job of parsing the brand names
+
+    attr_accessor :name
+    @@all = []                
+
+    def initialize(name)
+        @name = name
+        @@all << self          
+    end
+
+    def self.all
+        @@all
+    end
+
+    def count      #counts how many brands OR how many cigars attached to that brand, if more than one?
+        self.all.count
+    end
+
+    def self.find_or_create_by_name(brand_name)                   #This class method should take the name that is passed in (remember, it will be a string), and do one of two things: find the brand_name instance that has that name or create one if it doesn't exist. Either way, the return value of the method will be an instance of a brand_name with the name attribute filled out.
+        if self.all.find { |brand| brand.name == brand_name }
+        self.all.find { |brand| brand.name == brand_name }
+        else
+        self.new(brand_name)
+        end
+    end
+    
+    def print_cigars #or print brand names?
+        self.cigars.each { |cigar| puts cigar.name }   #or replace cigar with brand?
+    end
+
+    # def cigars
+    #     Cigar.all.select {|cigar| cigar.brand == self}      # if brands produce more than one type of cigar. this method means I should create a Cigar class. And then this #cigars method here will get all existing cigar instances from Cigar class and select only the ones that are associated with this Brand instance. 
+    # end
+
+end

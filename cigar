@@ -1,0 +1,22 @@
+# require "nokogiri"
+# require "open-uri"
+# require "pry"
+
+# see phase 1 lesson, collaborating objects lab
+
+class Cigars  #
+
+    attr_accessor :name, :brand_name
+    @@all = []     
+    
+    def initialize(name)
+        @name = name
+        @@all << self          
+    end
+
+    def self.all
+        @@all
+    end
+
+end
+
