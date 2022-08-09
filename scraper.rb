@@ -7,7 +7,7 @@ class Scraper
     def initialize
         html = URI.open("http://www.cigargeeks.com/cigardb/default.asp?") #search 'brands' of cigars instead of reviews
         parsed_content = Nokogiri::HTML(content)
-        parsed_content.csscss('.bbstable .messagecellbody') 
+        parsed_content.css('.bbstable .messagecellbody') 
 
         # parsed_content.css('td .messagecellbody').css('img')[6].values    #the array number and the format (values) can change
         # parsed_content.css('.bbstable td').css('img')[6]             # same as above
