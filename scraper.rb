@@ -7,9 +7,11 @@ class Scraper # the scraper class will scrape the data from the website and then
     def initialize  #or change from initialize to: def brand_from_url as this class will only focus on scraping and sending the data/not using the data? [see phase 1 lesson "collaborating objects lab"] - however may need an argument of page number
         html = URI.open("http://www.cigargeeks.com/cigardb/default.asp?") #search 'brands' of cigars instead of reviews
         parsed_content = Nokogiri::HTML(content)
-        cigar_brands = parsed_content.css('.bbstable .messagecellbody') 
-
-        
+        brands_info = parsed_content.css('.bbstable .messagecellbody') 
+        cigars_info = parsed_content.css('.bbstable tr')
+        name_of_cigar = cigars_info.css('td')[10].text
+        brand_of_cigar = brands_info.css('a')[1].text
+        #link_to_cigar = html + brands_info.css('a')[1]['href']
         binding.pry
         
 
