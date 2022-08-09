@@ -11,6 +11,7 @@ class Cigars  #
     
     def initialize(name)
         @name = name
+        @brand_name = brand_name
         @@all << self          
     end
 
@@ -18,5 +19,6 @@ class Cigars  #
         @@all
     end
 
+    
 end
 

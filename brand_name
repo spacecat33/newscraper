@@ -6,11 +6,12 @@
 
 class Brand_names  #brand_names relies on the scraper file to do its job of parsing the brand names
 
-    attr_accessor :name
+    attr_accessor :name, :link
     @@all = []                
 
     def initialize(name)
         @name = name
+        @link = link
         @@all << self          
     end
 
@@ -30,7 +31,7 @@ class Brand_names  #brand_names relies on the scraper file to do its job of pars
         end
     end
     
-    def print_cigars #or print brand names?
+    def print_cigars #or print brand names if brands do not have more than one cigar each. If more than one cigar, add in :cigars attr accessor and in initialize @cigars = cigards or an empty array?
         self.cigars.each { |cigar| puts cigar.name }   #or replace cigar with brand?
     end
 
