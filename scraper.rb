@@ -4,7 +4,7 @@ require "pry"
 
 class Scraper
 
-    def initialize
+    def initialize  #or change fro initialize to: def brand_from_url - however may need an argument of page number
         html = URI.open("http://www.cigargeeks.com/cigardb/default.asp?") #search 'brands' of cigars instead of reviews
         parsed_content = Nokogiri::HTML(content)
         cigar_brands = parsed_content.css('.bbstable .messagecellbody') 
