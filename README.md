@@ -1,5 +1,7 @@
 # newscraper
-practice
+Welcome to newscraper, where you can find information on different cigar brands!
+
+To download, you will need gems: Open_Uri and Nokogiri.
 
 Brand (has many cigars)
 - has a name
@@ -11,4 +13,4 @@ Cigar (belongs to a brand)
 - has a name
 
 User
-- wants to search the different cigar brands and the cigar(s) that those brands offer.
+- wants to search the different cigar brands (and possibly the cigar(s) that those brands offer).
