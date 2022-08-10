@@ -1,11 +1,12 @@
 # newscraper
 practice
 
-Brand
+Brand (has many cigars)
 - has a name
 - has produced at least one cigar
+<!-- - has a link to its webpage? -->
 
-Cigar
+Cigar (belongs to a brand)
 - is associated with a brand
 - has a name
 
