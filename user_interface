@@ -1,0 +1,9 @@
+class CLI
+
+    #  attr_accessor
+
+    def start
+        puts "Welcome to newscraper, where you can find information on different cigar brands!"
+        #add in code to run scraper.rb and print the brands info (consider if can add next level, cigar info too?)
+    end
+end
