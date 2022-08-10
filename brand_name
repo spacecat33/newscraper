@@ -6,16 +6,17 @@
 
 class Brand_names  #brand_names relies on the scraper file to do its job of parsing the brand names
 
-    attr_accessor :name, :link, :cigars #added cigars to capture the number of cigars a brand has produced
+    attr_accessor :name, :link, :cigars #added cigars to capture the number of cigars a brand has produced. should this be attr reader if expect this not to change? 
+   
     @@all = []                
-    cigars_info_count = cigars_info.count
-    i = 1
+    # cigars_info_count = cigars_info.count
+    # i = 1
 
 
-    def initialize(name)  
+    def initialize(name)  # should we initialise with number of cigars associated with the brand name?
         @name = name
         @link = link
-        @cigars = [] # added cigars to capture the number of cigars a brand has produced
+        #@cigars = [] # added cigars to capture the number of cigars a brand has produced however need a method to fill this array
         @@all << self          
     end
 
@@ -34,6 +35,27 @@ class Brand_names  #brand_names relies on the scraper file to do its job of pars
     def self.print_brand_names
         self.brand_name.each{|brand_name| puts brand_name.name}
     end
+
+    # def cigar_name
+    #     "This brand is #{@name} and has #{i} cigars."  #add in number of cigars
+    # end
+
+    def self.count
+        self.all.count
+    end
+
+    def cigars
+        Brand_name.all.select {|cigar| cigar.brand_name == self}
+    end
+    
+    def list_cigars
+        "This brand has #{cigars.count} cigar(s)."
+    end
+
+
+
+
+
 
     #how to print cigars associated with that brand name? #you need all cigars to be instances of Cigar class because they must respond to #name to work(?) - not a string 
 

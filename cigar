@@ -10,7 +10,7 @@ class Cigars  #
     @@all_cigars = []     
     
     
-    def initialize(name)
+    def initialize(name, brand_name)
         @name = name
         @brand_name = brand_name
         @@all_cigars << self          #does this show how many cigars associated with a brand? or does this cause ALL cigars for all brands to be included in this array?
@@ -19,6 +19,14 @@ class Cigars  #
 
     def self.all
         @@all_cigars
+    end
+
+    def cigar_name
+        "This cigar is known as #{@name} by #{@brand_name}."
+    end
+
+    def self.count
+        self.all.count
     end
 
 
