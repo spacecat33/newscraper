@@ -9,7 +9,7 @@ class Scraper # the scraper class will scrape the data from the website and then
         parsed_content = Nokogiri::HTML(content)
         brands_info = parsed_content.css('.bbstable .messagecellbody') 
         cigars_info = parsed_content.css('.bbstable tr')
-        name_of_cigar = cigars_info.css('td')[10].text  #add in a cigar counter
+        name_of_cigar = cigars_info.css('td')[10].text  #add in a cigar counter?
         brand_of_cigar = brands_info.css('a')[1].text
         #link_to_cigar = html + brands_info.css('a')[1]['href']
         binding.pry
