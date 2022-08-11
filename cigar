@@ -6,17 +6,20 @@
 
 class Cigars  #
 
-    attr_accessor :cigar_name, :brand_name
+    attr_accessor  :brand_name, :cigar_name
     @@all_cigars = []     
     
     
-    def initialize(cigar_name, brand_name)
-        @cigar_name = cigar_name
+    def initialize(brand_name, cigar_name)
         @brand_name = brand_name
-        @@all_cigars << self          #does this show how many cigars associated with a brand? or does this cause ALL cigars for all brands to be included in this array?
+        @cigar_name = cigar_name
+        save
     end
 
-
+    def save
+        @@all_cigars << self          #does this show how many cigars associated with a brand? or does this cause ALL cigars for all brands to be included in this array?
+    end
+    
     def self.all
         @@all_cigars
     end

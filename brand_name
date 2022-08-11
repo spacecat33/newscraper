@@ -16,13 +16,22 @@ class Brand_names  #brand_names relies on the scraper file to do its job of pars
     def initialize(brand_name, cigars=1)  # should we initialise with number of cigars associated with the brand name?
         @brand_name = name
         @link = link
-        #@cigars = [] # added cigars to capture the number of cigars a brand has produced however need a method to fill this array
+        # @cigars = [] # added cigars to capture the number of cigars a brand has produced however need a method to fill this array
         @@all << self          
     end
 
     def self.all
         @@all
     end
+
+    # def add_cigar(cigar_of_brand)
+    #     cigar = Cigars.new(cigar_of_brand)
+    #     cigar.brand == self
+    # end
+
+    # def cigars
+    #     Cigars.all.select {|cigar| cigar.brand == self}
+    # end
 
     def self.find_or_create_by_name(brand_name)                   #This class method should take the name that is passed in (remember, it will be a string), and do one of two things: find the brand_name instance that has that name or create one if it doesn't exist. Either way, the return value of the method will be an instance of a brand_name with the name attribute filled out.
         if self.all.find { |brand| brand.name == brand_name }
@@ -44,10 +53,20 @@ class Brand_names  #brand_names relies on the scraper file to do its job of pars
         self.all.count
     end
 
-    def cigars
+    def brands_cigars
         Brand_name.all.select {|cigar| cigar.brand_name == self}
     end
+    # or
+            # def brands_cigars
+            #     Cigars.all.select.do |cigar|
+            #     cigar.brand_name == self
+            # end
+
+binding.pry
+    brands_cigars #i.e. type brand name.brands_cigars (to test the method)
+
     
+            
     def list_cigars
         "This brand has #{cigars.count} cigar(s)."
     end
