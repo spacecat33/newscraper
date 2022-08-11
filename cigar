@@ -22,7 +22,7 @@ class Cigars  #
     end
 
     def cigar_name
-        "This cigar is known as #{@name} by #{@brand_name}."
+        "This cigar is known as #{@cigar_name} by #{@brand_name}." #this may not work if there is more than one cigar?
     end
 
     def self.count
