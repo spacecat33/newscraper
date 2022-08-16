@@ -1,0 +1,13 @@
+module Memorable
+    #insert any repetitive code
+    module ClassMethods
+        def count
+            self.all.count
+        end
+    end
+
+    module InstanceMethods
+        self.class.all << self
+    end
+
+end

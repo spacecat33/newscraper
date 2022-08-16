@@ -4,7 +4,9 @@ require "pry"
 #check if should put 'require bundler' method here or instead just put in the 'read me/install' instructions like the example on learn.
 #note: the environment file is read and loaded into memory in line order so adjust the below when figure out order of events.
 
+require_relative "../lib/user_interface"
+require_relative "../lib/concerns/findable"
+#require_relative "../lib/concerns/paramable"
 require_relative "../lib/scraber.rb"
 require_relative "../lib/brand_name" #should i add '.rb' to the file name? 
 require_relative "../lib/cigar"
-require_relative "../lib/user_interface"
