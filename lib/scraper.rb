@@ -1,6 +1,8 @@
-require "nokogiri"
-require "open-uri"
-require "pry"
+# require "nokogiri"
+# require "open-uri"
+# require "pry"
+
+#no longer needed as put it in the environment file.
 
 class Scraper # the scraper class will scrape the data from the website and then parse all the brand names (and their details?) into another class: brand_names folder (and maybe send the names to a separate cigar_info_class?
 
