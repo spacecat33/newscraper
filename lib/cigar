@@ -5,7 +5,9 @@
 # see phase 1 lesson, collaborating objects lab
 
 class Cigars  #
-
+    extend Findable::ClassMethods, Memorable
+    include Findable::InstanceMethods, Memorable
+    
     attr_accessor  :brand_name, :cigar_name
     @@all_cigars = []     
     

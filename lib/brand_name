@@ -5,7 +5,10 @@
 # see phase 1 lesson, collaborating objects lab
 
 class Brand_names  #brand_names relies on the scraper file to do its job of parsing the brand names
+    extend Findable::ClassMethods, Memorable
+    include Findable::InstanceMethods, Memorable
 
+    
     attr_accessor :brand_name, :link, :cigars #added cigars to capture the number of cigars a brand has produced. should this be attr reader if expect this not to change? 
    
     @@all = []                
