@@ -1,0 +1,9 @@
+require "nokogiri"
+require "open-uri"
+require "pry"
+#check if should put 'require bundler' method here or instead just put in the 'read me/install' instructions like the example on learn.
+
+require_relative "../lib/brand_name" #should i add '.rb'? does it matter which order this is in?
+require_relative "../lib/cigar"
+require_relative "../lib/scraber.rb"
+require_relative "../lib/user_interface"
