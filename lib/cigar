@@ -6,7 +6,7 @@
 
 class Cigars  #
     extend Findable::ClassMethods, Memorable
-    include Findable::InstanceMethods, Memorable
+    include Memorable::InstanceMethods #no instance methods in Findable so i've excluded here
 
     attr_accessor  :brand_name, :cigar_name
     @@cigars = []     

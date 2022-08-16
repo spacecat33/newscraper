@@ -6,7 +6,7 @@
 
 class Brand_names  #brand_names relies on the scraper file to do its job of parsing the brand names
     extend Findable::ClassMethods, Memorable
-    include Findable::InstanceMethods, Memorable
+    include Memorable::InstanceMethods #no Class methods in Findable so i've excluded here
 
 
     attr_accessor :brand_name, :link, :cigars #added cigars to capture the number of cigars a brand has produced. should this be attr reader if expect this not to change? 
@@ -17,7 +17,7 @@ class Brand_names  #brand_names relies on the scraper file to do its job of pars
 
 
     def initialize(brand_name, cigars=1)  # should we initialise with number of cigars associated with the brand name?
-        super
+        super   #this draws on the method inside the module of the same name asking those to execute plus execute this instance method.
         @brand_name = name
         @link = link
         
