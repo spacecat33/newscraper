@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "nokogiri"
+gem "nokogiri" #If you run into any issues with this, check out the following documentation: https://nokogiri.org/tutorials/installing_nokogiri.html
 gem "open-uri"
 gem "pry"
 

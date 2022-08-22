@@ -1,4 +1,4 @@
-class CLI
+class User_interface 
 
     #  attr_accessor
 

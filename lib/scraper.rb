@@ -8,8 +8,16 @@ class Scraper # the scraper class will scrape the data from the website and then
 
     def initialize  #or change from initialize to: def brand_from_url as this class will only focus on scraping and sending the data/not using the data? [see phase 1 lesson "collaborating objects lab"] - however may need an argument of page number
         html = URI.open("http://www.cigargeeks.com/cigardb/default.asp?") #search 'brands' of cigars instead of reviews
-        parsed_content = Nokogiri::HTML(content)
+        parsed_content = Nokogiri::HTML(html)
+
         brands_info = parsed_content.css('.bbstable .messagecellbody') 
+        brands_info.css("a").count #should return '51' as there are 51 brands - not sure if it will be able to count this before the iterating method below or after? Probably doesn't matter as has a css selector 'a'.
+
+        brands_info.each do |course|
+            puts brands_info.text.strip
+        end
+
+
         cigars_info = parsed_content.css('.bbstable tr')
         name_of_cigar = cigars_info.css('td')[10].text  #add in a cigar counter?
         brand_of_cigar = brands_info.css('a')[1].text
@@ -17,7 +25,9 @@ class Scraper # the scraper class will scrape the data from the website and then
         binding.pry
         
 
-        
+        brands_info.each do |course|
+            puts brands_info.text.strip
+        end
 
 
     end
