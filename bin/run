@@ -1,5 +1,9 @@
-#!/usr/bin/env ruby    #check if need to remove the hash for this or if it remains?
+#!/usr/bin/env ruby    #this is a shebang and is used to indicate what interpreter should be used to read the code in this file.
 
 require_relative "../config/environment"
+
+User_interface.new #check that this method starts the user interface
+
+binding.pry
 
 #see tic tac toe labs 'bin' files as explains how to 'launch'  user_interface from this file e.g. new tic tac toe game.
