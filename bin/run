@@ -2,7 +2,7 @@
 
 require_relative "../config/environment"
 
-User_interface.new #check that this method starts the user interface
+User_interface.new.start    #check that this method starts the user interface
 
 binding.pry
 
