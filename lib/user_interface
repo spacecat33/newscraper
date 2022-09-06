@@ -1,9 +1,36 @@
 class User_interface 
 
-    #  attr_accessor
+    #  attr_accessor :user_input
 
     def start
         puts "Welcome to newscraper, where you can find information on different cigar brands!"
         #add in code to run scraper.rb and print the brands info (consider if can add next level, cigar info too?)
+        puts "There are 50 brands available, to view them, please type a number betwee 1 and 50 or type "exit" to exit this programme"
+        decision
+    end
+
+    def decision
+
+        @user_input = gets.chomp.downcase   #or gets.strip.downcase
+
+        if @user_input == to_i #- 1
+            number
+        elsif @user_input == "exit"
+            exit
+        else
+            puts "Invalid entry. Please type a number betwee 1 and 50 or type "exit" to exit this programme."
+        end
+    end
+    
+    def number
+        loop do
+            @user_input = gets.chomp.to_i 
+            break if @user_input.between?(1,50)
+            puts "Invalid entry. There are 50 brands available, to view them, please type any number betwee 1 and 50."
+    end
+
+    def exit
+        puts "Thank you! Goodbye!"
     end
 end
+
