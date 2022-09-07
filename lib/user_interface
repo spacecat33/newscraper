@@ -14,7 +14,7 @@ class User_interface
         @user_input = gets.chomp.downcase   #or gets.strip.downcase
 
         if @user_input == to_i #- 1
-            number
+            number    # or (1,50) - does this mean the input by user should be 'number' and then later a request for an integer? or can we put (1,50) here instead?)
         elsif @user_input == "exit"
             exit
         else

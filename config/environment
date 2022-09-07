@@ -1,13 +1,13 @@
 # Require statements should go here.
 
-require 'rubygems'
+# require 'rubygems'
 require "nokogiri"
 require "open-uri"
 require "pry" 
-require "awesome_print" #check if this is helpful. If not, remove.
+# require "awesome_print" #check if this is helpful. If not, remove.
 
-require "bundler/setup"
-Bundler.require
+# require "bundler/setup"
+# Bundler.require
 #check if should put 'require bundler' method here or instead just put in the 'read me/install' instructions like the example on learn.
 #note: the environment file is read and loaded into memory in line order so adjust the below when figure out order of events.
 

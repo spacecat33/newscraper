@@ -1,11 +1,11 @@
-#no longer needed as put it in the environment file.
+# see class, Object-Oriented Scraping for another way to organise the below code.
 
 class Scraper # the scraper class will scrape the data from the website and then parse all the brand names (and their details?) into another class: brand_names folder (and maybe send the names to a separate cigar_info_class?
 
     def get_page  # changed from initialize as this class will only focus on scraping and sending the data [see phase 1 lesson "collaborating objects lab"] - however may need an argument of page number
         html = URI.open("http://www.cigargeeks.com/cigardb/default.asp?") #search 'brands' of cigars 
         parsed_content = Nokogiri::HTML(html) # this is the HTML (obtained by URI.open) converted into a structure of nested nodes by Nokogiri.
-
+       
         brands_info = parsed_content.css('.bbstable .messagecellbody') # The .css method takes in an argument of the CSS selector I want to retrieve. 
         
         brands = brands_info.css("a")
