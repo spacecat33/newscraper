@@ -1,8 +1,8 @@
 module Findable
   
-        def find_by_name(name)
-            self == Brand_names ? Brand_names.all.detect{|b| b.brand_name == name} #: Cigars.all.detect{|c| c.cigar_name == name}            
-        end
+        # def find_by_name(name)
+        #     self == Brand_names ? Brand_names.all.detect{|b| b.brand_name == name} #: Cigars.all.detect{|c| c.cigar_name == name}            
+        # end
 
         def obtain_index(i)
             self.all.find { | brand | brand.i == i }

@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby    #this is a shebang and is used to indicate what interpreter should be used to read the code in this file.
-# puts bin/run when want to test this lab.
+                       # puts bin/run when want to test this lab.
 require_relative "./config/environment" #check if should put .rb at the end of environment
 
 User_interface.new.start    #check that this method starts the user interface

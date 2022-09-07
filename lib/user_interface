@@ -9,12 +9,12 @@ class User_interface
         decision
     end
 
-    def decision
+    def decision #(@user_input) should we add an argument of the user's input?
 
-        @user_input = gets.chomp.downcase   #or gets.strip.downcase
+        @user_input = gets.strip.downcase   #or gets.chomp.downcase
 
-        if @user_input == to_i #- 1
-            number    # or (1,50) - does this mean the input by user should be 'number' and then later a request for an integer? or can we put (1,50) here instead?)
+        if @user_input == to_i #-1
+            ("1" - "50")    # or (number) - does this mean the input by user should be 'number' and then later a request for an integer? or can we put (1,50) here instead?)
         elsif @user_input == "exit"
             exit
         else
@@ -32,7 +32,7 @@ class User_interface
                 puts "#{brand.i}. #{brand.name}"
             end
     end
-    Brand_names.obtain_number(@i).name
+    # Brand_names.obtain_number(@i).name   #do we need to add a method to 'display' result?
 
     def exit
         puts "Thank you! Goodbye!"

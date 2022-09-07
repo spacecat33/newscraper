@@ -12,7 +12,7 @@ require "pry"
 #note: the environment file is read and loaded into memory in line order so adjust the below when figure out order of events.
 
 require_relative "../lib/scraber.rb" 
-require_relative "../lib/user_interface"
+require_relative "../lib/user_interface" #should this come first (before the scraper file)?
 require_relative "../lib/concerns/findable"
 require_relative "../lib/concerns/memorable" #check if this file runs correctly
 #require_relative "../lib/concerns/paramable"
