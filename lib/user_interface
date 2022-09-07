@@ -27,7 +27,12 @@ class User_interface
             @user_input = gets.chomp.to_i # add code that displays the brand name depending on the number that the user inputted.
             break if @user_input.between?(1,50)
             puts "Invalid entry. There are 50 brands available, to view them, please type any number betwee 1 and 50."
+        else
+            Brand_names.all.each do | brand |
+                puts "#{brand.i}. #{brand.name}"
+            end
     end
+    Brand_names.obtain_number(@i).name
 
     def exit
         puts "Thank you! Goodbye!"

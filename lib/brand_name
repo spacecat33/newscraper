@@ -4,16 +4,17 @@ class Brand_names  #brand_names relies on the scraper file to do its job of pars
     extend Findable::ClassMethods, Memorable
     include Memorable::InstanceMethods #no Class methods in Findable so i've excluded here
 
-    attr_accessor :brand_name #:link, :cigars - could add link and cigars to capture the link and number of cigars a brand has produced. should this be attr reader if expect this not to change? 
+    attr_accessor :brand_name, :i #:link, :cigars - could add link and cigars to capture the link and number of cigars a brand has produced. should this be attr reader if expect this not to change? 
    
     @@brands = []                
     # cigars_info_count = cigars_info.count
     # i = 1
 
 
-    def initialize(brand_name) # could add cigars=1 if want to capture this i.e should we initialise with number of cigars associated with the brand name?
+    def initialize(brand_name, i) # could add cigars=1 if want to capture this i.e should we initialise with number of cigars associated with the brand name?
         super   #this draws on the method inside the module of the same name asking those to execute plus execute this instance method.
         @brand_name = name
+        @i = i
         #@link = link
         # @cigars = [] # added cigars to capture the number of cigars a brand has produced however need a method to fill this array
         #@@all << self          
