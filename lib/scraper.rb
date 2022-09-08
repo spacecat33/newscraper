@@ -3,7 +3,7 @@
 class Scraper 
 
     def get_page(page_number = 1)  
-        html = URI.open("http://www.cigargeeks.com/cigardb/default.asp?action=&page=#{page_number}")      # searches pages of brands of cigars (70 in total)
+        html = URI.open("http://www.cigargeeks.com/cigardb/default.asp?action=&page=#{page_number}")      # searches pages of brands of cigars (70 in total). I updated link after rereading API lesson about URLs!
         parsed_content = Nokogiri::HTML(html) 
        
         brands_info = parsed_content.css('.bbstable .messagecellbody')                                    # The .css method takes in an argument of the CSS selector I want to retrieve. 
