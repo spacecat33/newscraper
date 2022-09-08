@@ -13,7 +13,7 @@ class User_interface
         @user_input = gets.strip.downcase   #or gets.chomp.downcase
 
         if @user_input == "brands"
-            get_number
+            get_number   #check this works too?
         elsif @user_input == "exit"
             exit
         else
