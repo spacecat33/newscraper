@@ -2,37 +2,37 @@
 
 # see phase 1 lesson, collaborating objects lab
 
-class Cigars  #
-    extend Findable::ClassMethods, Memorable
-    include Memorable::InstanceMethods #no instance methods in Findable so i've excluded here
+# class Cigars  #
+#     extend Findable::ClassMethods, Memorable
+#     include Memorable::InstanceMethods #no instance methods in Findable so i've excluded here
 
-    attr_accessor  :brand_name, :cigar_name
-    @@cigars = []     
+#     attr_accessor  :brand_name, :cigar_name
+#     @@cigars = []     
     
     
-    def initialize(brand_name, cigar_name)
-        super
-        @brand_name = brand_name
-        @cigar_name = cigar_name
-        # save
-    end
+#     def initialize(brand_name, cigar_name)
+#         super
+#         @brand_name = brand_name
+#         @cigar_name = cigar_name
+#         # save
+#     end
 
-    # def save
-    #     @@cigars << self          #does this show how many cigars associated with a brand? or does this cause ALL cigars for all brands to be included in this array?
-    # end
+#     # def save
+#     #     @@cigars << self          #does this show how many cigars associated with a brand? or does this cause ALL cigars for all brands to be included in this array?
+#     # end
     
-    def self.all
-        @@cigars
-    end
+#     def self.all
+#         @@cigars
+#     end
 
-    def cigar_name
-        "This cigar is known as #{@cigar_name} by #{@brand_name}." #this may not work if there is more than one cigar?
-    end
+#     def cigar_name
+#         "This cigar is known as #{@cigar_name} by #{@brand_name}." #this may not work if there is more than one cigar?
+#     end
 
-    # def self.count
-    #     self.all.count
-    # end
+#     # def self.count
+#     #     self.all.count
+#     # end
 
 
-end
+# end
 

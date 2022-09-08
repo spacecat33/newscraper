@@ -1,21 +1,26 @@
 # Require statements should go here.
 
-# require 'rubygems'
+
 require "nokogiri"
 require "open-uri"
 require "pry" 
-# require "awesome_print" #check if this is helpful. If not, remove.
 
+require_relative "../lib/user_interface" #should this come first (before the scraper file)?
+require_relative "../lib/scraber.rb" 
+require_relative "../lib/concerns/memorable" #check if this file runs correctly
+require_relative "../lib/brand_name"  
+
+
+
+
+
+# NOTES: if above doesn't work, consider adding the below requirements.
+# require 'rubygems'
+# require "awesome_print" #check if this is helpful. If not, remove.
 # require "bundler/setup"
 # Bundler.require
 #check if should put 'require bundler' method here or instead just put in the 'read me/install' instructions like the example on learn.
 #note: the environment file is read and loaded into memory in line order so adjust the below when figure out order of events.
-
-require_relative "../lib/scraber.rb" 
-require_relative "../lib/user_interface" #should this come first (before the scraper file)?
-require_relative "../lib/concerns/findable"
-require_relative "../lib/concerns/memorable" #check if this file runs correctly
+# require_relative "../lib/concerns/findable" #don't think anything relevant in the findable module for me to use
 #require_relative "../lib/concerns/paramable"
-
-require_relative "../lib/brand_name" #should i add '.rb' to the file name? 
 # require_relative "../lib/cigar"  # I don't think I need this file so have removed it from the 'enironment'

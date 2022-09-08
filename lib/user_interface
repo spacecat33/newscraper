@@ -1,38 +1,46 @@
 class User_interface 
 
-    #  attr_accessor :user_input
+     attr_accessor :page_number
 
     def start
         puts "Welcome to newscraper, where you can find information on different cigar brands!"
         #add in code to run scraper.rb and print the brands info (consider if can add next level, cigar info too?)
-        puts "There are 50 brands available, to view them, please type a number betwee 1 and 50 or type "exit" to exit this programme"
+        puts "There are 70 pages of different brands available, to view them, please type "brands" or type "exit" to exit this programme"
         decision
     end
 
-    def decision #(@user_input) should we add an argument of the user's input?
-
+    def decision 
         @user_input = gets.strip.downcase   #or gets.chomp.downcase
 
-        if @user_input == to_i #-1
-            ("1" - "50")    # or (number) - does this mean the input by user should be 'number' and then later a request for an integer? or can we put (1,50) here instead?)
+        if @user_input == "brands"
+            get_number
         elsif @user_input == "exit"
             exit
         else
-            puts "Invalid entry. Please type a number betwee 1 and 50 or type "exit" to exit this programme."
+            puts "Invalid entry. Please type "brands" to viw the pages or type "exit" to exit this programme."
+            decision
         end
     end
     
-    def number
+    def get_number
         loop do
-            @user_input = gets.chomp.to_i # add code that displays the brand name depending on the number that the user inputted.
-            break if @user_input.between?(1,50)
-            puts "Invalid entry. There are 50 brands available, to view them, please type any number betwee 1 and 50."
-        else
-            Brand_names.all.each do | brand |
-                puts "#{brand.i}. #{brand.name}"
-            end
+            puts "Please type your chosen page number between 1 and 70"
+            @user_input = gets.strip.to_i  #or gets.chomp.to_i
+            break if @user_input.between?(1,70) #should this be !between? or is the negative implied in the 'break'?
+            puts "Invalid entry. Please type your chosen page number between 1 and 70."
+        end
+    Scraper.new.get_page(@page_number) #check this works? should it be a global variable?
+    display_results
     end
-    # Brand_names.obtain_number(@i).name   #do we need to add a method to 'display' result?
+
+    def display_results
+        puts "Here are the results for page #{@page_number}:"
+         Brand_names.all.each do | brand |
+                puts "#{brand.i}. #{brand.name}" #check whether the 'i' is correct here? Reminder: the i stands for page_number/index.
+        end
+        puts "There are 70 pages of different brands available, to view them, please type "brands" or type "exit" to exit this programme"
+        decision
+    end
 
     def exit
         puts "Thank you! Goodbye!"
